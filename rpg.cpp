@@ -158,6 +158,42 @@ void faseDaCidade(struct Personagem &p){
     }
 }
 
+void faseDaDungeon(struct Personagem &p){
+    //Escolha das missões
+    unsigned int escolha = 0;
+    
+    while(escolha < 1 || escolha > 2){
+    std::cout << "Depois de sair Você vê um quadro de missões, nele só tem 2 papeis. Deseja olhar eles? \n";
+    std:: cout << "1-Sim\n2-Não";
+    std::cin >> escolha;
+    }
+
+    escolha = 0;
+
+    std::cout << "Digite 1-MISSÃO DE ALTO NIVEL\n 2-MISSÃO BAIXO NIVEL";
+
+
+    std::cin >> escolha;
+    std::cout << "--------------------------------";
+
+   if(escolha == 1){
+       std::cout << "MISSÃO DE ALTO NIVEL!!!"<<std::endl;
+       std::cout << "RECOMPENSA DE 200 CRÉDITOS"<<std::endl;
+       std::cout << "Objetivo:Matar todos os Esqueletos!"<<std::endl;
+       std::cout << "Existe uma Dungeon dos Esqueletos de Schrödinger que precisa ser destruida antes que sejá tarde, eles são muito fortes então tomem cuidado ao tentar destruir o lugar\n"<<std::endl;
+       std::cout << "Se desejar ir basta seguir pelo caminho das Árvores Mortas que está ao lado da entrada para a cidade.\n"<<std::endl;
+   }
+    else if(escolha == 2){
+        std::cout << "MISSÃO DE BAIXO NIVEL -_-"<<std::endl;
+        std::cout << "RECOMPENSA DE 70 CRÉDITOS"<<std::endl;
+        std::cout << "Objetivo:Destruir todos os Slimes!"<<std::endl;
+        std::cout << "Perto da cidade existem um campo aberto onde varios Slimes estão vivendo, eles não fazem mal a ninguém, mas estão sujando e assustando alguns moradores da cidade\n"<<std::endl;
+        std::cout << "Eles são bem fraquinhos então são bem faceis de serem derrotados\n"<<std::endl;
+        std::cout << "Caso aceite o caminho para o lugar é logo depois da saida da cidade.\n "<<std::endl;    
+    }
+
+}
+
 int main(int argc, char** argv)
 {
     // s = seed rand = aleatório                                                
@@ -174,4 +210,7 @@ int main(int argc, char** argv)
     faseDaCidade(j);
 
     mostraStatusDoJogador(j);
+
+    faseDaDungeon(j);
 }
+
