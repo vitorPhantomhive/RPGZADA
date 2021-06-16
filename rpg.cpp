@@ -196,15 +196,36 @@ void faseDaDungeon(struct Personagem &p){
         std::cout << "Caso aceite o caminho para o lugar é logo depois da saida da cidade.\n "<<std::endl;    
     }
         repetir = 0;
-        std::cout << "Se você deseja ler a outra missão digite 2";
+        std::cout << "Se você deseja ler a outra missão digite 2"<< std::endl;
         std::cin >> repetir;
 
         if(repetir == 1 ){
             break;
         }
    }    
-   
+   escolha = 0;
 
+    std:: cout <<"Agora precisa decidir qual delas você escolhe?\n 1-Missão de Alto nivel\n 2-Missão de baixo nivel"<< std::endl;
+    std:: cin >> escolha;
+
+    if(escolha == 1){
+        escolha = 0;
+        std::cout << "ok então você realmente é ganancioso hehe\n"<< std::endl;
+        std::cout << "Então você volta para o começo da cidade e desce o caminho das Árvores Mortas e vai percebendo que o ambiente está ficando estranho e cinza\n"<< std::endl;
+        std::cout << "Depois de um bom tempo andando você chega em uma dungeon bem grande e você vê uma porta\n deseja bater?"<< std::endl;
+        std::cout << "1 - sim 2 - não"<< std::endl;
+        std::cin >> escolha;
+        if(escolha == 1){
+            std::cout << "Você vai chegando perto e o clima fica cada vez mais tenso\n" << std::endl;
+            std::cout << "Você bate..."<< std::endl;
+            std::cin >> escolha; // professor aqui eu fiz para que fosse digitado qualquer coisa 
+                                //para que mostrasse os tres pontinhos para dar mais "tensão"
+            std::cout << "..."<< std::endl;
+            std::cout <<" POW POW os esqueletos derrubam a porta e vão para cima de você"<< std::endl;
+            std::cout << "1 - correr\n 2- lutar?\n 3- ficar parado"
+        }
+
+    }
 
 }
 
