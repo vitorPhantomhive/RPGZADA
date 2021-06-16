@@ -160,6 +160,8 @@ void faseDaCidade(struct Personagem &p){
 
 void faseDaDungeon(struct Personagem &p){
     //Escolha das missões
+    int repetir ;
+    unsigned  int menu = 0;
     unsigned int escolha = 0;
     
     while(escolha < 1 || escolha > 2){
@@ -168,15 +170,17 @@ void faseDaDungeon(struct Personagem &p){
     std::cin >> escolha;
     }
 
-    escolha = 0;
 
+    
+
+   for( ; ;) {
     std::cout << "Digite 1-MISSÃO DE ALTO NIVEL\n 2-MISSÃO BAIXO NIVEL";
 
 
     std::cin >> escolha;
     std::cout << "--------------------------------";
 
-   if(escolha == 1){
+       if(escolha == 1){
        std::cout << "MISSÃO DE ALTO NIVEL!!!"<<std::endl;
        std::cout << "RECOMPENSA DE 200 CRÉDITOS"<<std::endl;
        std::cout << "Objetivo:Matar todos os Esqueletos!"<<std::endl;
@@ -191,6 +195,16 @@ void faseDaDungeon(struct Personagem &p){
         std::cout << "Eles são bem fraquinhos então são bem faceis de serem derrotados\n"<<std::endl;
         std::cout << "Caso aceite o caminho para o lugar é logo depois da saida da cidade.\n "<<std::endl;    
     }
+        repetir = 0;
+        std::cout << "Se você deseja ler a outra missão digite 2";
+        std::cin >> repetir;
+
+        if(repetir == 1 ){
+            break;
+        }
+   }    
+   
+
 
 }
 
