@@ -218,11 +218,34 @@ void faseDaDungeon(struct Personagem &p){
         if(escolha == 1){
             std::cout << "Você vai chegando perto e o clima fica cada vez mais tenso\n" << std::endl;
             std::cout << "Você bate..."<< std::endl;
-            std::cin >> escolha; // professor aqui eu fiz para que fosse digitado qualquer coisa 
-                                //para que mostrasse os tres pontinhos para dar mais "tensão"
             std::cout << "..."<< std::endl;
+            escolha = 0;
             std::cout <<" POW POW os esqueletos derrubam a porta e vão para cima de você"<< std::endl;
-            std::cout << "1 - correr\n 2- lutar?\n 3- ficar parado"
+            std::cout << "1 - correr\n 2- lutar?\n"<< std::endl;
+            std::cin >> escolha;
+            switch (escolha)
+            {
+            case 1:
+            std::cout << "Você vira e tenta correr, porém uma flecha te acerta bem no peito." << std::endl;
+            std::cout << "Você morreu de hemorragia kkk."<< std::endl;
+            std::cout << "Tente novamente!!"<< std::endl;
+            break;
+            case 2:
+            std::cout << "Lutar? kkkkk como que luta sem espada?"<< std::endl;
+            std::cout << "Os esqueletos te cercam e enfiam as espadas em você"<<std::endl;
+            std::cout << "Você morreu kkkkk -_-"<<std::endl;
+            std::cout << "Tente novamente!!"<< std::endl;
+            break;
+            
+            default:
+            std::cout << "Você fica parado e eles te cercam e te matam a espadadas";
+            std::cout << "Você morreu kkkkkkkk -_-"<<std::endl;
+            
+                break;
+            }
+        }if(escolha == 2){
+            std:: cout << "De dentro da porta você ouve uma voz"<< std::endl;
+            std::cout << ""<< std::endl;
         }
 
     }
