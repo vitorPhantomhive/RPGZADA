@@ -252,17 +252,28 @@ void faseDaDungeon(struct Personagem &p){
             std::cin >> escolha;
             if(escolha == 1){
                 std:: cout << "A pergunta é com quantos paus se fazem uma canoa?" << std::endl;
-                std:: cout << "1- Um só\n 2-300\n 3-450" << std::endl;
+                std:: cout << "1- Um só\n 2-300\n 3-Não sei nunca fiz uma canoa" << std::endl;
                 std::cin >> resposta;
                 switch (resposta)
                 {
                 case 1:
-                std::cout << ""<<std::endl;
+                std::cout << "Errado\n você recebe um flechada e morre"<<std::endl;
                     break;
+                case 2:
+                std::cout << "Errado\n você recebe 2 flechas no peito e morre" << std::endl;
+                 break;
+                 case 3 :
+                 std::cout << "Ta ok você acertou\n a você precisará do código para entrar: 1234"<< std::endl;
+                 break;
                 
                 default:
+                std::cout << "falou errado perdeu a vez"<< std::endl;
                     break;
                 }
+            }
+            if(escolha == 2){
+                std::cout << "Já que você não quer responder começa o game de novo ai"<<std::endl;
+                //p.energia = p.energia - p.energia;
             }
         }
 
