@@ -160,6 +160,7 @@ void faseDaCidade(struct Personagem &p){
 
 void faseDaDungeon(struct Personagem &p){
     //Escolha das missões
+    int resposta = 0;
     int repetir ;
     unsigned  int menu = 0;
     unsigned int escolha = 0;
@@ -227,7 +228,7 @@ void faseDaDungeon(struct Personagem &p){
             {
             case 1:
             std::cout << "Você vira e tenta correr, porém uma flecha te acerta bem no peito." << std::endl;
-            std::cout << "Você morreu de hemorragia kkk."<< std::endl;
+            std::cout << "Você morreu de hemorragia kkkk"<< std::endl;
             std::cout << "Tente novamente!!"<< std::endl;
             break;
             case 2:
@@ -238,14 +239,31 @@ void faseDaDungeon(struct Personagem &p){
             break;
             
             default:
-            std::cout << "Você fica parado e eles te cercam e te matam a espadadas";
+            std::cout << "Você fica parado e eles te cercam e te matam a espadadas"<< std::endl;
             std::cout << "Você morreu kkkkkkkk -_-"<<std::endl;
             
                 break;
             }
         }if(escolha == 2){
+            escolha = 0;
             std:: cout << "De dentro da porta você ouve uma voz"<< std::endl;
-            std::cout << ""<< std::endl;
+            std::cout << "Responda uma pergunta, acertando poderá entrar errando morrerá. "<< std::endl;
+            std:: cout << "Você reposnde? 1-sim 2-não";
+            std::cin >> escolha;
+            if(escolha == 1){
+                std:: cout << "A pergunta é com quantos paus se fazem uma canoa?" << std::endl;
+                std:: cout << "1- Um só\n 2-300\n 3-450" << std::endl;
+                std::cin >> resposta;
+                switch (resposta)
+                {
+                case 1:
+                std::cout << ""<<std::endl;
+                    break;
+                
+                default:
+                    break;
+                }
+            }
         }
 
     }
