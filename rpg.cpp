@@ -160,6 +160,7 @@ void faseDaCidade(struct Personagem &p){
 
 void faseDaDungeon(struct Personagem &p){
     //Escolha das missões
+    int ponte = 0;
     int resposta = 0;
     int repetir ;
     unsigned  int menu = 0;
@@ -173,7 +174,7 @@ void faseDaDungeon(struct Personagem &p){
 
 
     
-
+    
    for( ; ;) {
     std::cout << "Digite 1-MISSÃO DE ALTO NIVEL\n 2-MISSÃO BAIXO NIVEL";
 
@@ -230,19 +231,19 @@ void faseDaDungeon(struct Personagem &p){
             std::cout << "Você vira e tenta correr, porém uma flecha te acerta bem no peito." << std::endl;
             std::cout << "Você morreu de hemorragia kkkk"<< std::endl;
             std::cout << "Tente novamente!!"<< std::endl;
-            break;
+            return;
             case 2:
             std::cout << "Lutar? kkkkk como que luta sem espada?"<< std::endl;
             std::cout << "Os esqueletos te cercam e enfiam as espadas em você"<<std::endl;
             std::cout << "Você morreu kkkkk -_-"<<std::endl;
             std::cout << "Tente novamente!!"<< std::endl;
-            break;
+            return;
             
             default:
             std::cout << "Você fica parado e eles te cercam e te matam a espadadas"<< std::endl;
             std::cout << "Você morreu kkkkkkkk -_-"<<std::endl;
-            
-                break;
+            return;
+
             }
         }if(escolha == 2){
             escolha = 0;
@@ -263,13 +264,22 @@ void faseDaDungeon(struct Personagem &p){
                 std::cout << "Errado\n você recebe 2 flechas no peito e morre" << std::endl;
                  break;
                  case 3 :
-                 std::cout << "Ta ok você acertou\n a você precisará do código para entrar: 1234"<< std::endl;
+                 std::cout << "Ta ok você acertou\n agora você precisará do código para entrar: 1234"<< std::endl;
                  break;
                 
                 default:
                 std::cout << "falou errado perdeu a vez"<< std::endl;
                     break;
                 }
+
+                do{
+                    std::cout << "Qual o código?" << std::endl;
+                    std::cin >> resposta;
+
+                    ponte++;
+
+                        
+                }while(resposta != 1234 && ponte <= 3);
             }
             if(escolha == 2){
                 std::cout << "Já que você não quer responder começa o game de novo ai"<<std::endl;
