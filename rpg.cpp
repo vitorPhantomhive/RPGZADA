@@ -174,8 +174,8 @@ void faseDaDungeon(struct Personagem &p){
 
 
     
-    
-   for( ; ;) {
+    if(escolha == 1){
+        for( ; ;) {
     std::cout << "Digite 1-MISSÃO DE ALTO NIVEL\n 2-MISSÃO BAIXO NIVEL";
 
 
@@ -289,7 +289,12 @@ void faseDaDungeon(struct Personagem &p){
 
     }
 
+}if(escolha == 2){
+    std::cout << "Poxa não quer ler as missão fica dificil, só de raiva vai ter que começar de novo"<<std::endl;
 }
+
+    }
+   
 
 int main(int argc, char** argv)
 {
