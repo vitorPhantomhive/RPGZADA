@@ -158,7 +158,7 @@ void faseDaCidade(struct Personagem &p){
     }
 }
 
-void faseDaDungeon(struct Personagem &p){
+void faseDaDungeon(struct Personagem &p){  
     //Escolha das missões
     int ponte = 0;
     int resposta = 0;
@@ -167,15 +167,14 @@ void faseDaDungeon(struct Personagem &p){
     unsigned int escolha = 0;
     
     while(escolha < 1 || escolha > 2){
-    std::cout << "Depois de sair Você vê um quadro de missões, nele só tem 2 papeis. Deseja olhar eles? \n";
-    std:: cout << "1-Sim\n2-Não";
+    std::cout << "Depois de sair Você vê um quadro de missões, nele só tem 2 papeis. Deseja olhar eles? \n"<<std::endl;
+    std:: cout << "1-Sim\n2-Não"<<std::endl;
     std::cin >> escolha;
     }
 
 
     
-    if(escolha == 1){
-        for( ; ;) {
+    if(escolha == 1){ for( ; ;) {
     std::cout << "Digite 1-MISSÃO DE ALTO NIVEL\n 2-MISSÃO BAIXO NIVEL";
 
 
@@ -185,32 +184,34 @@ void faseDaDungeon(struct Personagem &p){
        if(escolha == 1){
        std::cout << "MISSÃO DE ALTO NIVEL!!!"<<std::endl;
        std::cout << "RECOMPENSA DE 200 CRÉDITOS"<<std::endl;
-       std::cout << "Objetivo:Matar todos os Esqueletos!"<<std::endl;
-       std::cout << "Existe uma Dungeon dos Esqueletos de Schrödinger que precisa ser destruida antes que sejá tarde, eles são muito fortes então tomem cuidado ao tentar destruir o lugar\n"<<std::endl;
+       std::cout << "Objetivo: Matar todos os Esqueletos!"<<std::endl;
+       std::cout << "Existe uma Dungeon dos Esqueletos de Schrödinger que precisa ser destruida antes que sejá tarde, eles são muito fortes então tomem cuidado ao tentar destruir o lugar.\n"<<std::endl;
        std::cout << "Se desejar ir basta seguir pelo caminho das Árvores Mortas que está ao lado da entrada para a cidade.\n"<<std::endl;
    }
     else if(escolha == 2){
         std::cout << "MISSÃO DE BAIXO NIVEL -_-"<<std::endl;
         std::cout << "RECOMPENSA DE 70 CRÉDITOS"<<std::endl;
-        std::cout << "Objetivo:Destruir todos os Slimes!"<<std::endl;
-        std::cout << "Perto da cidade existem um campo aberto onde varios Slimes estão vivendo, eles não fazem mal a ninguém, mas estão sujando e assustando alguns moradores da cidade\n"<<std::endl;
-        std::cout << "Eles são bem fraquinhos então são bem faceis de serem derrotados\n"<<std::endl;
+        std::cout << "Objetivo: Destruir todos os Slimes!"<<std::endl;
+        std::cout << "Perto da cidade existem um campo aberto onde varios Slimes estão vivendo, eles não fazem mal a ninguém, mas estão sujando e assustando alguns moradores da cidade.\n"<<std::endl;
+        std::cout << "Eles são bem fraquinhos então são bem tranquilos de serem derrotados\n"<<std::endl;
         std::cout << "Caso aceite o caminho para o lugar é logo depois da saida da cidade.\n "<<std::endl;    
     }
         repetir = 0;
-        std::cout << "Se você deseja ler a outra missão digite 2"<< std::endl;
+        std::cout << "Se você não quiser ler a outra missão digite 1.\n Se quiser ler digite 2."<< std::endl;
         std::cin >> repetir;
 
         if(repetir == 1 ){
             break;
         }
    }    
-   escolha = 0;
+    escolha = 0;
 
-    std:: cout <<"Agora precisa decidir qual delas você escolhe?\n 1-Missão de Alto nivel\n 2-Missão de baixo nivel"<< std::endl;
+    std:: cout <<"Agora precisa decidir qual delas você escolhe?\n 1- Para Missão de Alto nivel\n 2-Para  Missão de baixo nivel"<< std::endl;
     std:: cin >> escolha;
-
-    if(escolha == 1){
+    //missão alto nivel
+   }
+        if(escolha == 1){
+        
         escolha = 0;
         std::cout << "ok então você realmente é ganancioso hehe\n"<< std::endl;
         std::cout << "Então você volta para o começo da cidade e desce o caminho das Árvores Mortas e vai percebendo que o ambiente está ficando estranho e cinza\n"<< std::endl;
@@ -233,7 +234,7 @@ void faseDaDungeon(struct Personagem &p){
             std::cout << "Tente novamente!!"<< std::endl;
             return;
             case 2:
-            std::cout << "Lutar? kkkkk como que luta sem espada?"<< std::endl;
+            std::cout << "Lutar? Como que luta sem espada kkkkk?"<< std::endl;
             std::cout << "Os esqueletos te cercam e enfiam as espadas em você"<<std::endl;
             std::cout << "Você morreu kkkkk -_-"<<std::endl;
             std::cout << "Tente novamente!!"<< std::endl;
@@ -244,12 +245,12 @@ void faseDaDungeon(struct Personagem &p){
             std::cout << "Você morreu kkkkkkkk -_-"<<std::endl;
             return;
 
-            }
+         }
         }if(escolha == 2){
             escolha = 0;
             std:: cout << "De dentro da porta você ouve uma voz"<< std::endl;
-            std::cout << "Responda uma pergunta, acertando poderá entrar errando morrerá. "<< std::endl;
-            std:: cout << "Você reposnde? 1-sim 2-não";
+            std::cout << "Responda uma pergunta, acertando poderá entrar, errando morrerá. "<< std::endl;
+            std:: cout << "Você responde? 1-sim 2-não";
             std::cin >> escolha;
             if(escolha == 1){
                 std:: cout << "A pergunta é com quantos paus se fazem uma canoa?" << std::endl;
@@ -259,45 +260,36 @@ void faseDaDungeon(struct Personagem &p){
                 {
                 case 1:
                 std::cout << "Errado\n você recebe um flechada e morre"<<std::endl;
-                    break;
+                    return;
                 case 2:
                 std::cout << "Errado\n você recebe 2 flechas no peito e morre" << std::endl;
-                 break;
+                 return;
                  case 3 :
-                 std::cout << "Ta ok você acertou\n agora você precisará do código para entrar: 1234"<< std::endl;
+                 std::cout << "Ótimo eu entendo sua dor vou deixar você passar\n"<< std::endl;
                  break;
                 
                 default:
-                std::cout << "falou errado perdeu a vez"<< std::endl;
-                    break;
+                std::cout << "falou errado perdeu a vez, tomou uma flechada e morreu"<< std::endl;
+                    return;
                 }
 
-                do{
-                    std::cout << "Qual o código?" << std::endl;
-                    std::cin >> resposta;
-
-                    ponte++;
-
-                        
-                }while(resposta != 1234 && ponte <= 3);
-            }
-            if(escolha == 2){
+            
+            }if(escolha == 2){
                 std::cout << "Já que você não quer responder começa o game de novo ai"<<std::endl;
+                return;
+                }
                 //p.energia = p.energia - p.energia;
-            }
+
         }
-
     }
-
-}if(escolha == 2){
-    std::cout << "Poxa não quer ler as missão fica dificil, só de raiva vai ter que começar de novo"<<std::endl;
 }
 
-    }
+
+
+
    
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
     // s = seed rand = aleatório                                                
     // std::time vem da biblioteca ctime  
     std::srand(std::time(nullptr)); //<-- Retorno o Unix time stamp
@@ -315,4 +307,3 @@ int main(int argc, char** argv)
 
     faseDaDungeon(j);
 }
-
