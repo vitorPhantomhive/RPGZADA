@@ -288,8 +288,45 @@ void faseDaDungeon(struct Personagem &p){
                 }
              if(escolha == 2){
                 std::cout << "Já que você não quer responder começa o game de novo ai"<<std::endl;
+                return;
                 //p.energia = p.energia - p.energia;
             }
+        }
+
+    }if(escolha == 2){
+        std::cout << "Você vai ao final da cidade e anda um pouco por uma estrada,\n o ambiente é bem agradavel."<<std::endl;
+        std::cout << "andando mais um pouco você encontra um campo bem aberto, onde você acha os Slimes que as pessoas tanto desgostam"<<std::endl;
+        std::cout << "Eles parecem muito amigaveis você realmente deseja exterminar todos eles\n aparentemente só de chegar perto com a mão levantanda para bater eles já se assustam"<<std::endl;
+        std::cout << "Tente espantalos com gritos e movimentos brucos"<<std::endl;
+        std::cout << "1- gritar e correr atrás deles 2-não fazer nada 3 - socar "<<std::endl;
+        escolha = 0;
+        std::cin >> escolha;
+        switch (escolha)
+        {
+        case 1:
+            std::cout <<"Você grita e corre na direção deles, as pessoas que estavam perto te veem gritando e correndo."<<std::endl;
+            std:: cout<< "Os Slimes correm de medo de você e vão para o meio da floresta e provavelmente vão demorar muito tempo para voltar"<<std::endl;
+            std::cout<< "Você volta para a cidade e ganha seu dinheiro"<<std::endl;
+            p.creditos = p.creditos + 70;
+            mostraStatusDoJogador(p);
+            std::cout <<"Obrigado por jogar XD"<<std::endl;
+
+            return;
+        case 2:
+        std::cout << "... o que você queria que acontecesse??"<<std::endl;
+        return;
+        
+        case 3:
+        std::cout<<"Você anda para o Slime mais proximo e da um SOCASSO na cara dele,\n ele sai rolando e fica muito triste e vai embora, os outros o acompanham"<<std::endl;
+        std::cout<< "Você volta para a cidade e ganha seu dinheiro"<<std::endl;
+            p.creditos = p.creditos + 70;
+            mostraStatusDoJogador(p);
+            std::cout <<"Obrigado por jogar XD"<<std::endl;
+            return;
+        
+        default:
+        std::cout<< "Faz direito ai" <<std::endl;
+            return;
         }
 
     }
@@ -320,4 +357,6 @@ int main(int argc, char** argv){
     mostraStatusDoJogador(j);
 
     faseDaDungeon(j);
+
+    mostraStatusDoJogador(j);
 }
